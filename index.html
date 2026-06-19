@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Grill | Premium Sizzle & Smoke</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="shortcut icon" href="#" />
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">Auto<span>Grill</span></div>
+        <nav class="nav-links">
+            <a href="#hero" class="active">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#booking">Book Table</a>
+            <a href="#catering">Catering</a>
+            <a href="#admin" id="admin-toggle"><i class="fa-solid fa-gauge"></i> Admin</a>
+        </nav>
+        <div class="nav-actions">
+            <button id="theme-toggle" class="icon-btn"><i class="fa-solid fa-moon"></i></button>
+            <button id="user-profile" class="icon-btn"><i class="fa-solid fa-user"></i> <span id="loyalty-badge" class="badge">0 pts</span></button>
+            <button id="cart-btn" class="icon-btn"><i class="fa-solid fa-basket-shopping"></i><span class="cart-count">0</span></button>
+        </div>
+    </header>
+
+    <section id="hero" class="hero-section">
+        <div class="video-overlay"></div>
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-rearing-up-barbecue-flames-closeup-4433-large.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <span class="tagline">🔥 The Ultimate Ngara Grilling Experience</span>
+            <h1>Sizzle That Drives Your Tastebuds</h1>
+            <p>Experience premium 4K-visualized cuts cooked to smoky perfection. Order instantly or reserve your live dynamic table.</p>
+            <div class="hero-actions">
+                <a href="#menu" class="btn btn-primary">Explore Menu</a>
+                <a href="#booking" class="btn btn-secondary">Reserve Table</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="discovery-zone">
+        <div class="search-container">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" id="menu-search" placeholder="Search 4K dishes (e.g., T-Bone, Nyama Choma, Smoked Ribs)...">
+        </div>
+        
+        <div class="ai-box">
+            <div class="ai-header"><i class="fa-solid fa-wand-magic-sparkles"></i> AI Chef Smart Recommender</div>
+            <p id="ai-suggestion">Loading your personalized craving recommendation...</p>
+        </div>
+    </section>
+
+    <section id="menu" class="menu-section">
+        <h2 class="section-title">Chef's Featured 4K Masterpieces</h2>
+        
+        <div class="menu-tabs">
+            <button class="tab-btn active" data-filter="all">All</button>
+            <button class="tab-btn" data-filter="chef">Chef Recommendations</button>
+            <button class="tab-btn" data-filter="beef">Signature Beef</button>
+            <button class="tab-btn" data-filter="chicken">Flame Poultry</button>
+        </div>
+
+        <div class="menu-grid" id="menu-grid">
+            </div>
+    </section>
+
+    <section id="booking" class="booking-section">
+        <h2 class="section-title">Live Dynamic Table Booking</h2>
+        <div class="booking-container">
+            <div class="table-map">
+                <h3>Floor Layout Map (Ngara Branch)</h3>
+                <div class="map-grid" id="map-grid">
+                    </div>
+                <div class="legend">
+                    <span><span class="legend-dot available"></span> Available</span>
+                    <span><span class="legend-dot booked"></span> Booked</span>
+                </div>
+            </div>
+            <div class="booking-form-wrapper">
+                <h3>Reserve Your Smoke Space</h3>
+                <form id="booking-form">
+                    <div class="form-group">
+                        <label>Selected Table ID</label>
+                        <input type="text" id="selected-table" readonly placeholder="Click a green table on map" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Date</label>
+                            <input type="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Time</label>
+                            <input type="time" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Confirm Reservation</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="catering" class="catering-location-section">
+        <div class="catering-box">
+            <h2>Catering & Events Booking</h2>
+            <p>Hosting an event in Nairobi? Let Auto Grill bring the fire pits to you. We cater corporate functions, private parties, and custom setups.</p>
+            <button class="btn btn-secondary" onclick="alert('Catering request form forwarded to event manager.')">Inquire Catering Service</button>
+            
+            <div class="qr-download">
+                <h4><i class="fa-solid fa-qrcode"></i> Scan to view on Mobile (PWA Menu)</h4>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://autogrill.ngara" alt="Menu QR Code" class="qr-img">
+            </div>
+        </div>
+
+       <div class="map-responsive">
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.821175655787!2d36.8202534!3d-1.2810842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1129665d9bf3%3A0x633fa878fa4bf94a!2sNgara%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1710000000000!5m2!1sen!2ske" 
+        width="100%" 
+        height="300" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+    </section>
+
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h3>Your Feast Order</h3>
+            <button id="close-cart" class="icon-btn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            </div>
+        <div class="cart-footer">
+            <div class="total-row"><span>Total:</span><span id="cart-total">KES 0</span></div>
+            
+            <div class="checkout-methods">
+                <button id="mpesa-btn" class="btn btn-mpesa"><i class="fa-solid fa-mobile-screen"></i> Pay via Lipa Na M-Pesa</button>
+                <button id="whatsapp-btn" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Order via WhatsApp</button>
+            </div>
+
+            <div class="order-tracker hidden" id="order-tracker">
+                <h4><i class="fa-solid fa-truck-ramp-box"></i> Live Tracker</h4>
+                <div class="tracker-steps">
+                    <span class="step active" id="step-1">Received</span>
+                    <span class="step" id="step-2">Grilling</span>
+                    <span class="step" id="step-3">Dispatched</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="admin-panel hidden" id="admin-panel">
+        <div class="admin-header">
+            <h3><i class="fa-solid fa-circle-user"></i> Management Back-Office Dashboard</h3>
+            <button id="close-admin" class="btn btn-secondary btn-sm">Exit Dashboard</button>
+        </div>
+        <div class="admin-stats">
+            <div class="stat-card"><h5>Active Orders</h5><p id="admin-orders-count">4</p></div>
+            <div class="stat-card"><h5>Gross Revenue</h5><p>KES 42,300</p></div>
+            <div class="stat-card"><h5>Tables Booked</h5><p id="admin-tables-count">3 / 8</p></div>
+        </div>
+    </div>
+
+    <script src="assets/scripts.js"></script>
+</body>
+</html>
